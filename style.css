@@ -4,26 +4,34 @@
     box-sizing: border-box;
 }
 
-body{
-    font-family: Arial, sans-serif;
+body {
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    line-height: 2.0;
+    line-height: 1.6;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #333;
-    
+    background-color: #222;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: white;
+    color: #fff;
 }
 
 .nav-links {
@@ -36,21 +44,23 @@ body{
 }
 
 .nav-links a {
-    color: #ffffff;
-    text-decoration: none;
+    color: #fff;
     font-size: 16px;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color:#00bcd4;
+    color: #00bcd4;
 }
 
+
 .section {
-    background-color: white;
+    background-color: #fff;
     margin: 30px auto;
-    padding: 40px;
-    width:auto;
-    border-radius:6px;
+    padding: 40px 20px;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .section h1, .section h2 {
@@ -60,24 +70,159 @@ body{
 
 .section p {
     font-size: 16px;
+    line-height: 1.8;
 }
 
-#projects, #contact {
-    min-height: 150px;
+
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap; /* responsive */
 }
 
-@media screen and (max-width: 768px) {
+.home-image img {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.home-text {
+    flex: 1;
+}
+
+.home-text h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.home-text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #00bcd4;
+    color: white;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0097a7;
+}
+
+
+.skills-section .cells {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.skills-section .cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skills-section .cell:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.skills-section .cell img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.skills-section .cell span {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.contact-section input,
+.contact-section textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.contact-section button {
+    padding: 12px;
+    background-color: #000000;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-section button:hover {
+    background-color: #000000;
+}
+
+
+@media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        padding: 1rem;
+        text-align: center;
     }
 
-    .nav-links li {
+    .nav-links {
+        flex-direction: column;
         margin-top: 10px;
     }
 
+    .nav-links li {
+        margin: 10px 0;
+    }
+
     .section {
-        padding: 20px;
-        margin: 20px auto;
+        width: 90%;
+        padding: 30px 15px;
+    }
+
+    .home-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-image img {
+        width: 200px;
+    }
+
+    .skills-section .cell {
+        width: 120px;
+        padding: 10px;
+    }
+
+    .skills-section .cell img {
+        width: 60px;
+        height: 60px;
     }
 }
