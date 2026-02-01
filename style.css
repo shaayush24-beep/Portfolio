@@ -4,16 +4,20 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(#ffffff);
     color: #333;
-    line-height: 1.6;
+    line-height: 3.0;
 }
 
 a {
     text-decoration: none;
-    color: inherit;
+    color:#ffffff;
 }
 
 
@@ -21,11 +25,11 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     background-color: #222;
     position: sticky;
     top: 0;
-    z-index: 100;
+    font-size: 22px;
 }
 
 .logo {
@@ -64,12 +68,12 @@ a {
 }
 
 .section h1, .section h2 {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     color: #222;
 }
 
 .section p {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.8;
 }
 
@@ -78,20 +82,17 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
-    flex-wrap: wrap; /* responsive */
-}
-
-.home-image image {
-    width: 300px;
-    max-width: 100%;
-    border-radius: 10px;
+    gap: 40px;
+    flex-wrap: wrap; 
 }
 
 .home-text {
-    flex: 1;
+    flex: 5;
 }
 
+.headshot{
+    flex: 2;
+}
 .home-text h1 {
     font-size: 2rem;
     margin-bottom: 15px;
@@ -142,7 +143,7 @@ a {
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.skills-section .cell image {
+.skills-section .cell img {
     width: 80px;
     height: 80px;
     object-fit: contain;
@@ -202,19 +203,8 @@ a {
         margin: 10px 0;
     }
 
-    .section {
-        width: 90%;
-        padding: 30px 15px;
-    }
 
-    .home-container {
-        flex-direction: column;
-        text-align: center;
-    }
 
-    .home-image {
-        width: 200px;
-    }
 
     .skills-section .cell {
         width: 120px;
