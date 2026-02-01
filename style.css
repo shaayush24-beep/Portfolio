@@ -82,7 +82,7 @@ a {
     flex-wrap: wrap; /* responsive */
 }
 
-.home-image img {
+.home-image image {
     width: 300px;
     max-width: 100%;
     border-radius: 10px;
@@ -142,7 +142,7 @@ a {
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.skills-section .cell img {
+.skills-section .cell image {
     width: 80px;
     height: 80px;
     object-fit: contain;
@@ -212,7 +212,7 @@ a {
         text-align: center;
     }
 
-    .home-image img {
+    .home-image {
         width: 200px;
     }
 
