@@ -1,24 +1,24 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-     text-decoration:none;
-     border: none;
-     outline: none;
+    box-sizing: border-box; /* Makes padding & border included in element width/height */
+     text-decoration:none; /* Removes underlines from links globally */
+     border: none; /* Removes borders from elements globally  */
+     outline: none;/* Removes focus outlines globally (not ideal for accessibility) */
 }
 
 html {
-    scroll-behavior:smooth;
-    font-size: 62.5%;
-    overflow-x: hidden;
+    scroll-behavior:smooth; /* Smooth scrolling for anchor links */
+    font-size: 62.5%; /* 1rem = 10px, easier calculation */
+    overflow-x: hidden;   /* Prevent horizontal scroll */
 }
 
 :root {
-    --bg-color: #080808;
-    --second-bg-color:#001005;
-    --text-color:white;
-    --main-color:#00ff51;
-    --soft-gray: #b3b3b3; 
+    --bg-color: #000000; /* Main background color */
+    --second-bg-color:#191b1a;  /* Section background */
+    --text-color:white; /* Main text color */
+    --main-color:#00ff51; /* Highlight/brand color */
+    
 }
 body {
     background: var(--bg-color);
@@ -27,7 +27,7 @@ body {
 
 a {
     text-decoration: none;
-    color:#ffffff;
+    color:#ffffff; 
 }
 p {
     color: var(--soft-gray);
@@ -36,24 +36,24 @@ p {
 
 
 .header {
-    position: fixed;
+    position: fixed; /* Sticks header at top */
     width: 100%;
     top: 0;
     left: 0;
     padding: 2rem 8%;
-    background: rgba(13, 13, 13, 0.8);
-    backdrop-filter: blur(15px);
+    background: rgba(13, 13, 13, 0.8);  /* Semi-transparent */
+    backdrop-filter: blur(15px);  /* Glass effect */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 100;  /* Above other content */
     border-bottom: 1px solid rgba(0, 255, 136, 0.1);
 }
 
 #menu-icon{
     font-size: 3.6rem;
     color: var(--main-color);
-    display: none;
+    display: none; /* Only used for mobile menu toggle */
 }
 
 .logo{
@@ -64,11 +64,11 @@ p {
     transition: 0.3s ease;
 }
 .logo:hover{
-    transform: scale(1.1);
+    transform: scale(1.1); /* Slight zoom effect */
 }
 
 .logo span{
-color: var(--main-color);
+color: var(--main-color); /* Highlight part of the logo */
 }
 
 .navbar {
@@ -97,6 +97,7 @@ color: var(--main-color);
 .section {
     background-color: var(--second-bg-color);
     margin: 80px auto;
+    min-height: 100px;
     padding: 60px 8%;
     width: 85%;
     border-radius: 16px;
@@ -131,7 +132,7 @@ color: var(--main-color);
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: s;
+    justify-content: center;
     overflow: hidden;
     text-align: center;
     color: white;
@@ -139,14 +140,14 @@ color: var(--main-color);
 
 /* FULL WEBSITE VIDEO BACKGROUND */
 .bg-video {
-    position: fixed;
+    position: fixed; /* Fixed so it covers viewport */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 110%;
+    height: 110%;
     object-fit: cover;
     z-index: -2;
-    filter: blur(6px);
+    filter: blur(6px); /* Slight blur for background */
     
 }
 
@@ -163,18 +164,18 @@ color: var(--main-color);
 
 
 .home-content {
-    z-index: 2;
+    z-index: 2;  /* Above overlay and video */
     max-width: 800px;
 }
 
 
 
 .home-text {
-    flex: 5;
+    flex: 5;  /* Takes more space in flex container */
 }
 
 .headshot{
-    flex: 2;
+    flex: 2;   /* Smaller portion for image */
 }
 
  .headshot img {
@@ -218,7 +219,7 @@ color: var(--main-color);
 .skills-section .cells {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Wraps on smaller screens */
     gap: 20px;
     margin-top: 20px;
 }
@@ -259,6 +260,24 @@ color: var(--main-color);
 .contact{
     background-color: var(--second-bg-color);
 }
+.about-section {
+    margin: 4rem auto;
+    padding: 2rem;
+    
+}
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap; /* stacks on mobile */
+}
+.about-text {
+    flex: 2;                   /* text takes more space than image */
+    font-size: 1.6rem;
+    line-height: 1.8;
+    width: 1000px;
+    color: #fff;
+}
 
 .contact h2{
     margin-bottom: 3rem;
@@ -274,7 +293,7 @@ color: var(--main-color);
 }
 .contact form input:focus,
 .contact form textarea:focus {
-    box-shadow: 0 0 10px var(--main-color);
+    box-shadow: 0 0 10px var(--main-color); /* Highlight on focus */
 }
 
 .contact form .input-box input,
@@ -287,7 +306,7 @@ color: var(--main-color);
     border-radius: 2rem;
     border: 2px solid var(--main-color);
     margin: 2rem 0;
-    resize: none;
+    resize: none; /* prevents resizing textareas */
 }
 
 .footer {
@@ -310,7 +329,7 @@ color: var(--main-color);
 .section {
     opacity: 0;
     transform: translateY(40px);
-    animation: fadeUp 0.8s ease forwards;
+    animation: fadeUp 0.8s ease forwards; /* Fade-in animation */
 }
 
 @keyframes fadeUp {
@@ -320,6 +339,7 @@ color: var(--main-color);
     }
 }
 
+/* For Responsive Website*/
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -347,4 +367,67 @@ color: var(--main-color);
         width: 60px;
         height: 60px;
     }
+}
+
+/* Container & layout */
+.get-in-touch {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: #111;       /* dark background */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+/* Heading */
+.get-in-touch .heading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Paragraph */
+.get-in-touch p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+/* Contact Info */
+.contact-info-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+/* Each Info Item */
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.info-item i {
+    font-size: 2rem;
+    color: #dee6e1; /* theme color */
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    color: #00ffee;
+    font-size: 2rem;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #ffffff;
 }
